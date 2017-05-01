@@ -67,36 +67,13 @@ class SemanticScribunto {
 		];
 
 		// Register message files
-		$GLOBALS['wgMessagesDirs']['SemanticScribunto'] = __DIR__ . '/i18n';
-	}
-
-	/**
-	 * @since 1.0
-	 */
-	public static function doCheckRequirements() {
-
-		if ( version_compare( $GLOBALS[ 'wgVersion' ], '1.27', 'lt' ) ) {
-			die( '<b>Error:</b> <a href="https://github.com/SemanticMediaWiki/SemanticScribunto/">Semantic Scribunto</a> is only compatible with MediaWiki 1.26 or above. You need to upgrade MediaWiki first.' );
-		}
-
-		// Using the constant as indicator to avoid class_exists
-		if ( !defined( 'CONTENT_MODEL_SCRIBUNTO' ) ) {
-			die( '<b>Error:</b> <a href="https://github.com/SemanticMediaWiki/SemanticScribunto/">Semantic Scribunto</a> requires <a href="https://www.mediawiki.org/wiki/Extension:Scribunto">Scribunto</a>, please enable or install the extension first.' );
-		}
-
-		if ( !defined( 'SMW_VERSION' ) ) {
-			die( '<b>Error:</b> <a href="https://github.com/SemanticMediaWiki/SemanticScribunto/">Semantic Scribunto</a> requires <a href="https://github.com/SemanticMediaWiki/SemanticMediaWiki/">Semantic MediaWiki</a>, please enable or install the extension first.' );
-		}
+		$GLOBALS['wgExtensionMessagesFiles']['SemanticScribunto'] = __DIR__ . '/SemanticScribunto.i18n.php';
 	}
 
 	/**
 	 * @since 1.0
 	 */
 	public static function onExtensionFunction() {
-
-		// Check requirements after LocalSetting.php has been processed
-		self::doCheckRequirements();
-
 		$hookRegistry = new HookRegistry();
 		$hookRegistry->register();
 	}
