@@ -19,8 +19,6 @@ class HookRegistry {
 
 	/**
 	 * @since 1.0
-	 *
-	 * @param array $options
 	 */
 	public function __construct() {
 		$this->addCallbackHandlers();

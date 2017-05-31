@@ -66,15 +66,6 @@ class SemanticScribunto {
 			'license-name'   => 'GPL-2.0+',
 		);
 
-		// MW 1.26+
-		if ( !function_exists( 'wfGlobalCacheKey' ) ) {
-			function wfGlobalCacheKey( /*...*/ ) {
-				$args = func_get_args();
-				$key = 'global:' . implode( ':', $args );
-				return strtr( $key, ' ', '_' );
-			}
-		}
-
 		// Register message files
 		$GLOBALS['wgExtensionMessagesFiles']['SemanticScribunto'] = __DIR__ . '/SemanticScribunto.i18n.php';
 	}
