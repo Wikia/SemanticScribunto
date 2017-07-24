@@ -4,7 +4,8 @@
 vendor/
 extensions/
 
-composer.phar
+composer.phar*
+*.zip
 composer.lock
 
 !.*
