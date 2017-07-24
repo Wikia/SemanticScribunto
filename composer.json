@@ -1,5 +1,5 @@
 {
-	"name": "mediawiki/semantic-scribunto",
+	"name": "wikia/semantic-scribunto",
 	"type": "mediawiki-extension",
 	"description": "A Semantic Mediawiki extension to natively support the Scribunto extension",
 	"keywords": [
@@ -67,14 +67,5 @@
 			"composer phpunit",
 			"composer cs"
 		]
-	},
-	"repositories": [
-		{
-			"type": "composer",
-			"url": "http://artifactory.wikia-inc.com/artifactory/api/composer/php-local"
-		},
-		{
-			"packagist": false
-		}
-	]
+	}
 }
