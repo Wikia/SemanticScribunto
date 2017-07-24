@@ -51,6 +51,7 @@
 		}
 	},
 	"config": {
+		"prepend-autoloader": false,
 		"process-timeout": 0
 	},
 	"scripts":{
@@ -66,5 +67,14 @@
 			"composer phpunit",
 			"composer cs"
 		]
-	}
+	},
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "http://artifactory.wikia-inc.com/artifactory/api/composer/php-local"
+		},
+		{
+			"packagist": false
+		}
+	]
 }
